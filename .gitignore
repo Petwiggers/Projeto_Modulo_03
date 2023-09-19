@@ -1,0 +1,114 @@
+# Arquivos de compilação
+bin/
+obj/
+
+# Dependências
+**/bin/
+**/obj/
+*.suo
+*.user
+*.sln.docstates
+
+# Logs e arquivos temporários
+*.log
+*.swp
+*.swo
+*.bak
+*.cache
+*.db
+*.db-shm
+*.db-wal
+
+# Arquivos de publicação
+publish/
+
+# Pacotes do NuGet
+packages/
+
+# Arquivos de configuração
+*.config
+*.config.user
+*.config.user.default
+
+# Arquivos de usuário
+*.suo
+*.user
+*.userosscache
+
+# Arquivos de teste
+[Tt]est[Rr]esult*/
+[Bb]in/
+[Oo]bj/
+.xlog/
+
+# Visual Studio 2017/2019 config folder
+.vs2017/
+.vs2019/
+
+# Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# JetBrains Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.suo
+*.userosscache
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
