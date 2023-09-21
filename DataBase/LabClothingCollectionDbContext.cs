@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using M3P_BackEnd_Squad1.Models;
 using M3P_BackEnd_Squad1.Models.Enums;
+using System.Collections.Generic;
+using System.Reflection.Emit;
 
 namespace M3P_BackEnd_Squad1.DataBase
 {
@@ -21,7 +23,7 @@ namespace M3P_BackEnd_Squad1.DataBase
         {
             modelBuilder.Entity<User>().ToTable("Users");
 
-            modelBuilder.Entity<User>().HasKey(x => x.Id).HasName("ID");
+            modelBuilder.Entity<User>().HasKey(x => x.Id);
 
             modelBuilder.Entity<User>().Property(x => x.Id).HasColumnName("ID").HasColumnType("INT");
             modelBuilder.Entity<User>().Property(x => x.Name).IsRequired().HasColumnName("NAME").HasColumnType("VARCHAR(200)");
@@ -33,7 +35,7 @@ namespace M3P_BackEnd_Squad1.DataBase
 
             modelBuilder.Entity<Company>().ToTable("Companies");
 
-            modelBuilder.Entity<Company>().HasKey(x => x.Id).HasName("ID");
+            modelBuilder.Entity<Company>().HasKey(x => x.Id);
 
             modelBuilder.Entity<Company>().Property(x => x.Id).HasColumnName("ID").HasColumnType("INT");
             modelBuilder.Entity<Company>().Property(x => x.Name).IsRequired().HasColumnName("NAME").HasColumnType("VARCHAR(200)");
@@ -46,7 +48,7 @@ namespace M3P_BackEnd_Squad1.DataBase
 
             modelBuilder.Entity<CompanySetup>().ToTable("CompaniesSetup");
 
-            modelBuilder.Entity<CompanySetup>().HasKey(x => x.Id).HasName("ID");
+            modelBuilder.Entity<CompanySetup>().HasKey(x => x.Id);
 
             modelBuilder.Entity<CompanySetup>().Property(x => x.Id).HasColumnName("ID").HasColumnType("INT");
             modelBuilder.Entity<CompanySetup>().Property(x => x.Tema).IsRequired().HasColumnName("TEMA").HasColumnType("INT").HasConversion<int>();
@@ -57,7 +59,7 @@ namespace M3P_BackEnd_Squad1.DataBase
 
             modelBuilder.Entity<Collection>().ToTable("Collections");
 
-            modelBuilder.Entity<Collection>().HasKey(x => x.Id).HasName("ID");
+            modelBuilder.Entity<Collection>().HasKey(x => x.Id);
 
             modelBuilder.Entity<Collection>().Property(x => x.Id).HasColumnName("ID").HasColumnType("INT");
             modelBuilder.Entity<Collection>().Property(x => x.Name).IsRequired().HasColumnName("NAME").HasColumnType("VARCHAR(200)");
@@ -70,7 +72,7 @@ namespace M3P_BackEnd_Squad1.DataBase
 
             modelBuilder.Entity<Model>().ToTable("Models");
 
-            modelBuilder.Entity<Model>().HasKey(x => x.Id).HasName("ID");
+            modelBuilder.Entity<Model>().HasKey(x => x.Id);
 
             modelBuilder.Entity<Model>().Property(x => x.Id).HasColumnName("ID").HasColumnType("INT");
             modelBuilder.Entity<Model>().Property(x => x.Name).IsRequired().HasColumnName("NAME").HasColumnType("VARCHAR(200)");
