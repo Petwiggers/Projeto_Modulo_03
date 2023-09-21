@@ -44,6 +44,7 @@ packages/
 # Visual Studio 2017/2019 config folder
 .vs2017/
 .vs2019/
+.vs/
 
 # Rider
 .idea/
