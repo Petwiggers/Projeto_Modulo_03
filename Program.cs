@@ -1,3 +1,4 @@
+using M3P_BackEnd_Squad1.Middlewares;
 using M3P_BackEnd_Squad1.Services;
 using M3P_BackEnd_Squad1.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -44,6 +45,9 @@ if (app.Environment.IsDevelopment())
 //Configurando Api para utilizar Autenticações e Autorizações no Sistema
 app.UseAuthentication();
 app.UseAuthorization();
+
+//Adicionando Middleware de Erros
+app.UseMiddleware<ErrorsMiddleware>();
 
 app.UseHttpsRedirection();
 
