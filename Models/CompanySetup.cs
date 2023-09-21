@@ -12,5 +12,6 @@ namespace M3P_BackEnd_Squad1.Models
         public ThemeEnum Tema { get; set; }
         public string Logo { get; set; }
         public int CompanyID { get; set; }
+        public virtual Company Company { get; set; }
     }
 }

@@ -16,5 +16,7 @@ namespace M3P_BackEnd_Squad1.Models
         public DateTime ReleaseYear { get; set; }
         public SeasonsEnum Seasons { get; set; }
         public StatusEnum Status { get; set; }
+
+        public ICollection<Model> Models { get; set; }
     }
 }

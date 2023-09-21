@@ -14,5 +14,7 @@ namespace M3P_BackEnd_Squad1.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public EnumRole Role { get; set; }
+
+        public ICollection<Model> Models { get; set; }
     }
 }

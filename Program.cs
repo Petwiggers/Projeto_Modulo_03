@@ -1,3 +1,4 @@
+using M3P_BackEnd_Squad1.DataBase;
 using M3P_BackEnd_Squad1.Middlewares;
 using M3P_BackEnd_Squad1.Services;
 using M3P_BackEnd_Squad1.Utilities;
@@ -25,6 +26,9 @@ builder.Services.AddAuthentication(x =>
         ValidateAudience = false
     };
 });
+
+//add Db
+builder.Services.AddDbContext<LabClothingCollectionDbContext>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
