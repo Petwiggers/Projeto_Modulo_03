@@ -10,18 +10,9 @@ namespace M3P_BackEnd_Squad1.Models
 {
     public class User : IUser
     {
-        [Key]
         public int Id { get; set; }
-
-        [Required(ErrorMessage = "O campo nome é de preenchimento obrigatório")]
-        [MaxLength(200, ErrorMessage ="O campo não deve exceder 200 caracteres")]
-        public string Name { get; set; }
-
-        [Required(ErrorMessage = "O campo email é de preenchimento obrigatório")]
-        [MaxLength(200, ErrorMessage ="O campo não deve exceder 200 caracteres")]
-        public string Email { get; set; }
-
-        [Required(ErrorMessage = "O campo papel é de preenchimento obrigatório")]
+        public String Name { get; set; }
+        public String Email { get; set; }
         public EnumRole Role { get; set; }
     }
 }
