@@ -11,8 +11,8 @@ namespace M3P_BackEnd_Squad1.Models
     public class User : IUser
     {
         public int Id { get; set; }
-        public String Name { get; set; }
-        public String Email { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
         public EnumRole Role { get; set; }
     }
 }

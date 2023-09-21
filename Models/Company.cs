@@ -12,11 +12,11 @@ namespace M3P_BackEnd_Squad1.Models
 
 
         public int Id { get; set; }
-        public String CompanyName { get; set; }
-        public String Cnpj { get; set; }
-        public String Manager { get; set; }
-        public String Email { get; set; }
-        public String Password { get; set; }
+        public string CompanyName { get; set; }
+        public string Cnpj { get; set; }
+        public string Manager { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
 
 
     }
