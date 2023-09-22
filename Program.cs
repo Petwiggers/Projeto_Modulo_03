@@ -1,6 +1,8 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using M3P_BackEnd_Squad1.DataBase;
+using M3P_BackEnd_Squad1.DataBase.Repositories;
+using M3P_BackEnd_Squad1.Interfaces.Repositories;
 using M3P_BackEnd_Squad1.Middlewares;
 using M3P_BackEnd_Squad1.Services;
 using M3P_BackEnd_Squad1.Utilities;
@@ -36,15 +38,23 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 });
 
 
-//add Db
-builder.Services.AddDbContext<LabClothingCollectionDbContext>();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<Cryptography>();
+//Repositories
+
+//Context
+builder.Services.AddDbContext<LabClothingCollectionDbContext>();
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
+
+//Services
 builder.Services.AddScoped<LoginService>();
+
+//Utilities
+builder.Services.AddScoped<Cryptography>();
 
 var app = builder.Build();
 

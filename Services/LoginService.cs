@@ -6,6 +6,9 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using M3P_BackEnd_Squad1.DTOs;
+using M3P_BackEnd_Squad1.Exceptions;
+using M3P_BackEnd_Squad1.Interfaces.Repositories;
+using M3P_BackEnd_Squad1.Models;
 using M3P_BackEnd_Squad1.Utilities;
 using Microsoft.IdentityModel.Tokens;
 
@@ -13,7 +16,7 @@ namespace M3P_BackEnd_Squad1.Services
 {
     public class LoginService
     {
-        // private readonly IUsuarioService _usuarioService;
+        private readonly ILoginRepository _loginRepository;
         private readonly string _chaveJwt;
         private LoginDTO loginMock = new LoginDTO
         {
@@ -21,31 +24,24 @@ namespace M3P_BackEnd_Squad1.Services
             Senha = "123",
         };
 
-        public LoginService(/*IUsuarioService usuarioService,*/ IConfiguration configuration, JwtUtilities jwtUtilities)
+        public LoginService(ILoginRepository loginRepository, IConfiguration configuration)
         {
-            // _usuarioService = usuarioService;
+            _loginRepository = loginRepository;
             _chaveJwt = configuration.GetSection("jwtTokenChave").Get<string>();
         }
 
-        public bool Autenticar(LoginDTO login)
+        public string LoginValidation(LoginDTO login)
         {
-            // Usuario usuario = _usuarioService.ObterPorId(login.Usuario);
-            // if (usuario != null)
-            // {
-            // return usuario.Senha == JwtUtilities.CriptografarSenha(login.Senha);
-            // }
-            // return false;
-            if (login.Email == loginMock.Email && login.Senha == loginMock.Senha)
+            User user = _loginRepository.GetUserEmail(login.Email);
+            if (!(login.Email == loginMock.Email && login.Senha == loginMock.Senha))
             {
-                return true;
+                throw new UnauthorizedException("Login or password invalid");
             }
-            return false;
+            return GerarToken(login);
         }
 
-        public string GerarToken(LoginDTO login)
+        private string GerarToken(LoginDTO login)
         {
-            // Usuario usuario = _usuarioService.ObterPorId(login.Usuario);
-
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_chaveJwt);
 

@@ -8,7 +8,7 @@ namespace M3P_BackEnd_Squad1.Interfaces.Services
 {
     public interface ILoginService
     {
-        public bool Autenticar(LoginDTO login);
-        public string GerarToken(LoginDTO login);
+        public string LoginValidation(LoginDTO login);
+        public string GenerateToken(LoginDTO login);
     }
 }
