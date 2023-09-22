@@ -13,7 +13,7 @@ using M3P_BackEnd_Squad1.Interfaces;
 
 namespace M3P_BackEnd_Squad1.Utilities
 {
-    public class JwtUtilities : EncryptPassword
+    public class Cryptography : EncryptPassword
     {
         public static string CriptografarSenha(string senha)
         {

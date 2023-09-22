@@ -65,6 +65,63 @@ namespace M3P_BackEnd_Squad1.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Collections", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Brand = "Adidas",
+                            Budget = 250000m,
+                            Color = "Red",
+                            Name = "Rising of the Mountains",
+                            ReleaseYear = new DateTime(2004, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Seasons = 0,
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Brand = "Outlet",
+                            Budget = 100000m,
+                            Color = "Blue",
+                            Name = "Creek of love",
+                            ReleaseYear = new DateTime(2010, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Seasons = 3,
+                            Status = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Brand = "Adidas",
+                            Budget = 500000m,
+                            Color = "White",
+                            Name = "Spring Flowers",
+                            ReleaseYear = new DateTime(2014, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Seasons = 2,
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Brand = "Jakarta",
+                            Budget = 50000m,
+                            Color = "Black",
+                            Name = "Amazon of Brazil",
+                            ReleaseYear = new DateTime(1999, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Seasons = 2,
+                            Status = 3
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Brand = "Umbro",
+                            Budget = 330700m,
+                            Color = "Yellow",
+                            Name = "Southern Cold",
+                            ReleaseYear = new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Seasons = 1,
+                            Status = 2
+                        });
                 });
 
             modelBuilder.Entity("M3P_BackEnd_Squad1.Models.Company", b =>
@@ -214,6 +271,43 @@ namespace M3P_BackEnd_Squad1.Migrations
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "Maria@teste.com",
+                            Name = "Maria Fernanda",
+                            Role = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "peterson@teste.com",
+                            Name = "Peterson Wiggers",
+                            Role = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "marcelo@teste.com",
+                            Name = "Marcelo Dias",
+                            Role = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Email = "fabio@teste.com",
+                            Name = "Fabio Solva",
+                            Role = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Email = "dejacir@teste.com",
+                            Name = "Dejacir Wiggers",
+                            Role = 0
+                        });
                 });
 
             modelBuilder.Entity("M3P_BackEnd_Squad1.Models.CompanySetup", b =>

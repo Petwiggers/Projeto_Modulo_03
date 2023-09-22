@@ -1,3 +1,5 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using M3P_BackEnd_Squad1.DataBase;
 using M3P_BackEnd_Squad1.Middlewares;
 using M3P_BackEnd_Squad1.Services;
@@ -27,6 +29,13 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+//Convers�o de Enum para string
+builder.Services.AddControllers().AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+});
+
+
 //add Db
 builder.Services.AddDbContext<LabClothingCollectionDbContext>();
 
@@ -34,7 +43,7 @@ builder.Services.AddDbContext<LabClothingCollectionDbContext>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<JwtUtilities>();
+builder.Services.AddScoped<Cryptography>();
 builder.Services.AddScoped<LoginService>();
 
 var app = builder.Build();

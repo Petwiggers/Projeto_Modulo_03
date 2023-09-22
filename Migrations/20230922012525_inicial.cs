@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace M3P_BackEnd_Squad1.Migrations
 {
     /// <inheritdoc />
-    public partial class CriacaoInicial : Migration
+    public partial class inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -112,6 +114,30 @@ namespace M3P_BackEnd_Squad1.Migrations
                         principalTable: "Users",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Collections",
+                columns: new[] { "ID", "BRAND", "BUDGET", "COLOR", "NAME", "RELEASE_YEAR", "SEASONS", "STATUS" },
+                values: new object[,]
+                {
+                    { 1, "Adidas", 250000m, "Red", "Rising of the Mountains", new DateTime(2004, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 0 },
+                    { 2, "Outlet", 100000m, "Blue", "Creek of love", new DateTime(2010, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, 2 },
+                    { 3, "Adidas", 500000m, "White", "Spring Flowers", new DateTime(2014, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 1 },
+                    { 4, "Jakarta", 50000m, "Black", "Amazon of Brazil", new DateTime(1999, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 3 },
+                    { 5, "Umbro", 330700m, "Yellow", "Southern Cold", new DateTime(2023, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "ID", "EMAIL", "NAME", "ROLE" },
+                values: new object[,]
+                {
+                    { 1, "Maria@teste.com", "Maria Fernanda", 0 },
+                    { 2, "peterson@teste.com", "Peterson Wiggers", 1 },
+                    { 3, "marcelo@teste.com", "Marcelo Dias", 2 },
+                    { 4, "fabio@teste.com", "Fabio Solva", 1 },
+                    { 5, "dejacir@teste.com", "Dejacir Wiggers", 0 }
                 });
 
             migrationBuilder.CreateIndex(
