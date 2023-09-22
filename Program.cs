@@ -37,9 +37,6 @@ builder.Services.AddControllers().AddJsonOptions(x =>
     x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
 });
 
-
-
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -52,6 +49,7 @@ builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 
 //Services
 builder.Services.AddScoped<LoginService>();
+
 
 //Utilities
 builder.Services.AddScoped<Cryptography>();
